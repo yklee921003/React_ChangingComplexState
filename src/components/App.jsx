@@ -7,11 +7,16 @@ function App() {
   });
 
   function updateName(event) {
-    const newValue = event.target.value;
-    const inputName = event.target.name;
-    console.log(newValue);
-    console.log(inputName);
-    setName();
+   // const newValue = event.target.value;
+    //const inputName = event.target.name;
+    const {name, value} = event.target;
+    
+    setName((prevValue) => {
+      return{
+        ... prevValue,
+        [name]:value
+      }
+    });
   }
 
   return (
